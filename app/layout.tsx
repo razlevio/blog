@@ -1,12 +1,10 @@
 import "@/styles/globals.css"
+
 import { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import { appConfig } from "@/config/app"
-import { geist, geistMono } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
-import { Toaster } from "sonner";
-import { ThemeProvider } from "@/components/providers/theme-provider"
 
 export const metadata: Metadata = {
 	title: {
@@ -45,24 +43,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-			<html
-				lang="en"
-				className={cn("h-full", geist.className, geist.variable, geistMono.variable)}
-				suppressHydrationWarning
-			>
-				<body>
-					<ThemeProvider
-						attribute="class"
-						defaultTheme="system"
-						enableSystem
-						disableTransitionOnChange
-					>
-						<Toaster position="bottom-center" />
-						{children}
-						<Analytics />
-						<SpeedInsights />
-					</ThemeProvider>
-				</body>
-			</html>
+		<html lang="en" suppressHydrationWarning>
+			<body>
+				{children}
+				<Analytics />
+				<SpeedInsights />
+			</body>
+		</html>
 	)
 }
