@@ -1,15 +1,11 @@
 import "@/styles/globals.css"
-
 import { Metadata } from "next"
-import { ClerkProvider } from "@clerk/nextjs"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Toaster } from "sonner"
-
 import { appConfig } from "@/config/app"
 import { geist, geistMono } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
-import { ModalProvider } from "@/components/providers/modal-provider"
+import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/providers/theme-provider"
 
 export const metadata: Metadata = {
@@ -49,7 +45,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<ClerkProvider>
 			<html
 				lang="en"
 				className={cn("h-full", geist.className, geist.variable, geistMono.variable)}
@@ -63,13 +58,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 						disableTransitionOnChange
 					>
 						<Toaster position="bottom-center" />
-						<ModalProvider />
 						{children}
 						<Analytics />
 						<SpeedInsights />
 					</ThemeProvider>
 				</body>
 			</html>
-		</ClerkProvider>
 	)
 }
