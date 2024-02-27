@@ -77,17 +77,17 @@ The base URL for all endpoints is `/api/posts`.
 
 ### Usage
 
-This projects is for the job assignemnt, so I pre populated a database with 3 Blog posts and deployed the database to cloud provider, I also deployed the actual API app to vercel so you can test it live (for testing POST/PUT requests you need to use curl or postman to mimck the requests)
+This projects is for the job assignemnt, so I pre populated a database with blog posts and deployed the database to cloud provider, I also deployed the actual API app to vercel so you can test it live (for testing POST/PUT requests you need to use curl or postman to mimck the requests)
 
-- http://localhost:3000/api/posts -> **GET** all posts
-- http://localhost:3000/api/posts -> **POST** to add a new post, need to pass
+- https://blog-api-razlevio.vercel.app/api/posts -> **GET** all posts
+- https://blog-api-razlevio.vercel.app/api/posts -> **POST** to add a new post, need to pass
   `{ "userId": "user_2cup8PaqPToR58vGWwGghXr5noa", "title": "blog title", "content": "blog content" }`
   I included here the pre populated user id for easy testing.
-- http://localhost:3000/api/posts/clt39eg890001m7d8r4phcvtu -> **GET** specific post by the id
-- http://localhost:3000/api/posts/clt39eg890001m7d8r4phcvtu -> **PUT** update a specific post by its id, need to pass
+- http://blog-api-razlevio.vercel.app/api/posts/clt39eg890001m7d8r4phcvtu -> **GET** specific post by the id
+- http://blog-api-razlevio.vercel.app/api/posts/clt39eg890001m7d8r4phcvtu -> **PUT** update a specific post by its id, need to pass
   `{ "title": "updated title", "content": "updated content" }`
   you don't have to pass both of them since you can update only title or only content
-- http://localhost:3000/api/posts/clt39eg890001m7d8r4phcvtu -> **DELETE** specific post by its id
+- http://blog-api-razlevio.vercel.app:3000/api/posts/clt39eg890001m7d8r4phcvtu -> **DELETE** specific post by its id
 
 ### Authentication and Authorization
 
